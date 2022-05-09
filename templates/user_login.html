@@ -1,23 +1,24 @@
 {% extends 'dummy.html' %}
 
 {% block title %}
-    <title>registration</title>
-{% endblock %}
+    <title>login Html</title>
+ {% endblock %}
 
-{% block body_block %}
-<center>
-<h1>Log in form </h1>
 
-<form method="POST">
-    {% csrf_token %}
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username">
-    <br>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password"><br>
-    <input type="submit" value="Login">
-</form>
-    
-</center>
+ {% block body_block %}
 
-{% endblock %}
+ <div class='container'>
+     <div class='jumbotron'>
+            <h1>Login page</h1>
+            <form method="POST">
+                {% csrf_token %}
+                username:  
+                <input type="text" name="username" id="username"><br>
+                password:  
+                <input type="password" name="password" id="password"><br>
+                <input type="submit" value="Login" class='btn btn-primary'>
+            </form>
+            <h2><a href="{% url 'forgot_password' %}">Reset</a></h2>
+     </div>
+ </div>
+ {% endblock %}
