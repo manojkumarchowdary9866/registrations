@@ -6,14 +6,15 @@
 
 
  {% block body_block %}
-
- <div class='container'>
-     <div class='jumbotron'>
+<center>
+ <div class='container' style="width:500px ;">
+     <div class='jumbotron' style="background-color: cyan
+     ;"
             <h1>Login page</h1>
             <form method="POST">
                 {% csrf_token %}
                 username:  
-                <input type="text" name="username" id="username"><br>
+                <input type="text" name="username" id="username" ><br>
                 password:  
                 <input type="password" name="password" id="password"><br>
                 <input type="submit" value="Login" class='btn btn-primary'>
@@ -21,4 +22,5 @@
             <h2><a href="{% url 'forgot_password' %}">Reset</a></h2>
      </div>
  </div>
+</center>
  {% endblock %}

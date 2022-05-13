@@ -47,6 +47,9 @@ def user_login(request):
             login(request,user)
             request.session['username']=username
             return HttpResponseRedirect(reverse('home'))
+        else:
+            return HttpResponse('user is a not active user')
+      
     return render(request,'user_login.html')
 @login_required
 def user_logout(request):
